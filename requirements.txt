@@ -1,0 +1,10 @@
+pandas
+splink
+numpy
+seaborn
+matplotlib
+tsfresh
+scikit-learn
+cleanlab
+lazypredict
+-e .
