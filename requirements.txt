@@ -10,4 +10,5 @@ lazypredict
 xgboost
 catboost
 dill
+flask
 #-e .
