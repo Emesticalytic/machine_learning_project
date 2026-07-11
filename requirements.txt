@@ -7,4 +7,6 @@ tsfresh
 scikit-learn
 cleanlab
 lazypredict
--e .
+xgboost
+catboost
+#-e .
