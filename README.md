@@ -42,3 +42,6 @@ The dataset (`src/notebook/data/student.csv`) has 1000 student records with thes
 ## Tech used
 
 Python, pandas, scikit-learn, XGBoost, CatBoost, Flask.
+
+Emem Akpan
+July 2026
