@@ -9,4 +9,5 @@ cleanlab
 lazypredict
 xgboost
 catboost
+dill
 #-e .
