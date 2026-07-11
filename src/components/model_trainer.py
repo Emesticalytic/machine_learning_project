@@ -50,7 +50,44 @@ class ModelTrainer:
                 'CatBoosting Regressor': CatBoostRegressor(random_state=42, verbose=False),
             }
 
-            model_report = evaluate_models(X_train, y_train, X_test, y_test, models)
+            params = {
+                'Linear Regression': {},
+                'Ridge': {
+                    'alpha': [0.01, 0.1, 1, 10, 100],
+                },
+                'Lasso': {
+                    'alpha': [0.01, 0.1, 1, 10, 100],
+                },
+                'K-Neighbors Regressor': {
+                    'n_neighbors': [3, 5, 7, 9, 11],
+                },
+                'Decision Tree': {
+                    'criterion': ['squared_error', 'absolute_error', 'poisson'],
+                    'max_depth': [3, 5, 7, 10, None],
+                },
+                'Random Forest Regressor': {
+                    'n_estimators': [8, 16, 32, 64, 128, 256],
+                },
+                'AdaBoost Regressor': {
+                    'learning_rate': [0.1, 0.01, 0.5, 0.001],
+                    'n_estimators': [8, 16, 32, 64, 128, 256],
+                },
+                'SVR': {
+                    'C': [0.1, 1, 10, 100],
+                    'kernel': ['linear', 'rbf'],
+                },
+                'XGBRegressor': {
+                    'learning_rate': [0.1, 0.01, 0.05, 0.001],
+                    'n_estimators': [8, 16, 32, 64, 128, 256],
+                },
+                'CatBoosting Regressor': {
+                    'depth': [6, 8, 10],
+                    'learning_rate': [0.01, 0.05, 0.1],
+                    'iterations': [30, 50, 100],
+                },
+            }
+
+            model_report = evaluate_models(X_train, y_train, X_test, y_test, models, params)
 
             best_model_score = max(model_report.values())
             best_model_name = max(model_report, key=lambda name: model_report[name])
