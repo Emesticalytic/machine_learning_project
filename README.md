@@ -21,23 +21,6 @@ Out of 10 models tested (Linear Regression, Ridge, Lasso, KNN, Decision Tree, Ra
 
 The dataset (`src/notebook/data/student.csv`) has 1000 student records with these columns: gender, race/ethnicity, parental level of education, lunch type, test preparation course, and scores in maths, reading, and writing.
 
-## How to run it
-
-1. Install the dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
-
-2. Run the training pipeline (this reads the data, builds the preprocessing pipeline, trains the models, and saves the best one to `artifacts/`):
-   ```
-   python -m src.components.data_ingestion
-   ```
-
-3. Start the web app:
-   ```
-   python app.py
-   ```
-   Then open `http://127.0.0.1:5000` in your browser, fill in the form, and get a predicted maths score.
 
 ## Tech used
 
